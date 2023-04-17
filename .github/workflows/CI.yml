@@ -19,11 +19,5 @@ jobs:
           distribution: 'adopt'
       - name: Build with Maven
         run: mvn --batch-mode --update-snapshots package
-  test:
-    name: Web Testing Alterra
-    needs: Build
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-      - name: Test API III
+      - name: Web Testing
         run: mvn clean verify
